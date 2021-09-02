@@ -7,7 +7,7 @@
  
 int main() 
 {
-    printf("Hello, architecture from uname is %s\n", ARCH);
+    printf("Hello innovation coffee, architecture from uname is %s\n", ARCH);
 
     switch (sizeof(void *))
     {
