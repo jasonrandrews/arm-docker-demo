@@ -7,5 +7,5 @@ if [ "$arch" == 'arm64' ]; then
   arch=aarch64
 fi
 
-docker build -t $IMG:$(arch) .
+docker build -t $IMG:$arch .
 
