@@ -10,7 +10,7 @@ There are multiple ways to work with multi-architecture images.
 
 ## Use buildx to emulate non-native architectures
 
-build.sh: does everyting on the local machine:
+build.sh: does everything on the local machine:
 - Create a buildx builder
 - Use the builder
 - Build for 3 target architectures on the local machine
@@ -84,9 +84,7 @@ On the local Arm machine build the two Arm flavors.
 ```bash
 docker context use default
 docker build --platform linux/arm64 -t jasonrandrews/hello-world:latest-arm64  .
-docker build --platform linux/arm/v7 -t jasonrandrews/hello-world:latest-arm32  .
 docker push jasonrandrews/hello-world:latest-arm64
-docker push jasonrandrews/hello-world:latest-arm32
 ```
 
 # Use docker manifest to create multi-arch images
@@ -103,7 +101,6 @@ This makes it easy to build and test images on their native architecture (withou
 ```bash
 docker manifest create jasonrandrews/hello-world:latest \
 --amend jasonrandrews/hello-world:latest-arm64 \
---amend jasonrandrews/hello-world:latest-arm32 \
 --amend jasonrandrews/hello-world:latest-amd64
 docker manifest push --purge jasonrandrews/hello-world:latest
 ```
