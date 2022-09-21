@@ -79,7 +79,7 @@ The new image can be run on any x86 machine. This is not a multi-arch image.
 docker run --rm jasonrandrews/hello-world:latest-amd64
 ```
 
-On the local Arm machine build the two Arm flavors.
+On the local Arm machine build the Arm image.
 
 ```bash
 docker context use default
